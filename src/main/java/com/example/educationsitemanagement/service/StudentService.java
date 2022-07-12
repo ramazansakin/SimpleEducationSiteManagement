@@ -1,5 +1,6 @@
 package com.example.educationsitemanagement.service;
 
+import com.example.educationsitemanagement.model.Course;
 import com.example.educationsitemanagement.model.Student;
 import com.example.educationsitemanagement.repo.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ public class StudentService {
 
     @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    private CourseService courseService;
 
     // CRUD Operations
     // Business Logic implementations
@@ -44,10 +48,21 @@ public class StudentService {
 
     //    @Override
     public boolean deleteStudent(Integer id) {
-        // check if its already there or not !
+        // check if it's already there or not !
         getStudent(id);
         studentRepository.delete(id);
         return true;
+    }
+
+    public List<Student> getAllStudentByCourse(Integer courseId) {
+        Course courseById = courseService.getCourseById(courseId);
+        List<Student> allStudents = studentRepository.getAll();
+        if (courseById != null) {
+            for (int i = 0; i < allStudents.size(); i++) {
+
+            }
+        }
+        return null;
     }
 
 
