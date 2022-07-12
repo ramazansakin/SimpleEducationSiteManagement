@@ -1,11 +1,13 @@
 package com.example.educationsitemanagement.repo;
 
 import com.example.educationsitemanagement.model.Instructor;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Repository
 public class InstructorRepository {
 
     private List<Instructor> instructorList = new ArrayList<>();

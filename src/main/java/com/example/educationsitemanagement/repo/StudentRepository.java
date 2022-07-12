@@ -1,6 +1,7 @@
 package com.example.educationsitemanagement.repo;
 
 import com.example.educationsitemanagement.model.Student;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +10,11 @@ import java.util.List;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
+
+// How we can make this class a bean ? -> @Repository annotation
+// What is the bean , which kind of beans we are using on spring boot?
 // Cloneable -> Marker Interface
+@Repository
 public class StudentRepository {
 
     private List<Student> students = new ArrayList<>();
@@ -162,7 +167,7 @@ public class StudentRepository {
                 System.out.println("All Students:");
 
                 MyStudentIterable myStudentIterable = new MyStudentIterable(repository.getAll());
-                myStudentIterable.forEach( student -> System.out.println("Student : " + student) );
+                myStudentIterable.forEach(student -> System.out.println("Student : " + student));
 
             }
 
@@ -203,7 +208,6 @@ public class StudentRepository {
     }
 
 }
-
 
 class MyStudentIterable implements Iterable<Student> {
 
