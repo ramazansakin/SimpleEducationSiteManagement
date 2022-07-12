@@ -61,6 +61,7 @@ public class Student implements Cloneable {
         this.about = about;
     }
 
+    // Can be used as Set
     public List<Course> getCourses() {
         return courses;
     }
