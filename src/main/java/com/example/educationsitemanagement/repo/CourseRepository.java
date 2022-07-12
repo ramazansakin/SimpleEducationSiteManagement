@@ -12,8 +12,6 @@ public class CourseRepository {
 
     private List<Course> courses = new ArrayList<>();
 
-    private CourseRepository courseRepository;
-
     {
         courses.addAll(
                 Arrays.asList(
@@ -21,7 +19,7 @@ public class CourseRepository {
                                 "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!",
                                 49.99, 1000, 700, 8.5, null),
                         new Course("DevOps Beginners to Advanced | Decoding DevOps with Projects",
-                                    "Begin DevOps Career As an Absolute Beginner | Linux, AWS, Scripting, Jenkins, Ansible, Docker, K8s, N-Tier Projects",
+                                "Begin DevOps Career As an Absolute Beginner | Linux, AWS, Scripting, Jenkins, Ansible, Docker, K8s, N-Tier Projects",
                                 69.99, 500, 350, 7.8, null),
                         new Course("Physics",
                                 "Learn how to effectively use Google Ads to reach more customers online and grow your business.",
@@ -30,6 +28,10 @@ public class CourseRepository {
                                 "Learn SQL and handle databases confidently",
                                 39.99, 200, 150, 9.8, null))
         );
+    }
+
+    public List<Course> getAllCourses() {
+        return courses;
     }
 
 }

@@ -3,7 +3,7 @@ package com.example.educationsitemanagement.model;
 public class Course {
 
     private Integer id;
-    private String headline;
+    private String title;
     private String details;
     private double price;
     private int countOfPeopleBought;
@@ -16,10 +16,10 @@ public class Course {
     public Course() {
     }
 
-    public Course(String headline, String details, double price,
+    public Course(String title, String details, double price,
                   int countOfPeopleBought, int countOfReview, double point, Instructor instructor) {
         this.id = ++idSequence;
-        this.headline = headline;
+        this.title = title;
         this.details = details;
         this.price = price;
         this.countOfPeopleBought = countOfPeopleBought;
@@ -32,12 +32,12 @@ public class Course {
         return id;
     }
 
-    public String getHeadline() {
-        return headline;
+    public String getTitle() {
+        return title;
     }
 
-    public void setHeadline(String headline) {
-        this.headline = headline;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDetails() {
@@ -94,7 +94,7 @@ public class Course {
     public String toString() {
         return "Course{" +
                 "id=" + id +
-                ", headline='" + headline + '\'' +
+                ", headline='" + title + '\'' +
                 ", details='" + details + '\'' +
                 ", price=" + price +
                 ", countOfPeopleBought=" + countOfPeopleBought +
